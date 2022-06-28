@@ -48,3 +48,24 @@ console.log(Object.getPrototypeOf(carObj));
 
 carObj.drive();
 carObj.mileage();
+
+/* Adpater pattern */
+console.log('---------Adapter Pattern---------');
+
+var tempArrayInCelsius = [
+  { place: 'Nagpur', temp: 40.0 },
+  { place: 'Chandrapur', temp: 50.0 },
+];
+
+const cityInFahrenheit = { place: 'Akola', temp: 86.0 };
+
+const convertCityTempToCelsius = (city) => {
+  /* this function changes/adapts the temp to required format */
+  city.temp = ((city.temp - 32) * 5) / 9;
+};
+
+convertCityTempToCelsius(cityInFahrenheit);
+
+tempArrayInCelsius.push(cityInFahrenheit);
+
+console.log('tempArrayInCelsius : ', tempArrayInCelsius);
