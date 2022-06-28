@@ -23,3 +23,28 @@ addPropertyToObj(obj1);
 console.log(obj1);
 
 obj1.addProp();
+
+/* Prototype pattern */
+console.log('---------Prototype Pattern---------');
+const carObj = {
+  id: 1,
+  name: 'Ferrari',
+};
+
+const vehicleObj = {
+  drive: () => {
+    console.log('driving vehicle...');
+  },
+  mileage: () => {
+    console.log('getting mileage...');
+  },
+};
+
+Object.setPrototypeOf(carObj, vehicleObj);
+
+console.log(carObj);
+
+console.log(Object.getPrototypeOf(carObj));
+
+carObj.drive();
+carObj.mileage();
